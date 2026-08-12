@@ -1,3 +1,3 @@
 [submodule "themes/paper-moments"]
 	path = themes/paper-moments
-	url = git@github.com-kmoretti:kmoretti/hexo-theme-moment.git
+	url = https://github.com/kmoretti/hexo-theme-moment.git
