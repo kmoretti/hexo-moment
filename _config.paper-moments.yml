@@ -1,0 +1,394 @@
+# 主题个性化配置。
+# 头像、作者和首页文案都可以在这里修改，不需要改模板。
+
+site_name: 喵洛阁
+site_mark: <KM/.>
+
+profile:
+  name: 克喵Moretti
+  avatar: https://q2.qlogo.cn/headimg_dl?dst_uin=3149261770&spec=0
+  role: 学生
+  bio: 每一段旅行，都有重点。
+
+home:
+  eyebrow: PERSONAL Moments / 个人瞬间
+  title: 记录一些想说的话。
+  subtitle: 一页一页，收集生活里微小但确实存在的光。
+  enter_label: 去看说说
+  enter_url: /shuoshuo/
+
+navigation:
+  - name: 首页
+    path: /
+    icon: home
+  - name: 说说
+    path: /shuoshuo/
+    icon: note
+  - name: 相册
+    path: /gallery/
+    icon: images
+  - name: 留言板
+    path: /comment/
+    icon: message-circle
+  - name: 友人
+    icon: link
+    children:
+      - name: 友链
+        path: /link/
+        icon: link
+      - name: 朋友圈
+        path: /fcircle/
+        icon: book
+  - name: 关于
+    path: /about/
+    icon: user
+
+social_links: 
+# 示例：
+# social_links:
+#   - name: GitHub
+#     url: https://github.com/your-name
+#     icon: github
+#     label: 在 GitHub 查看我的项目
+  - name: GitHub
+    url: https://s.081531.xyz/github
+    icon: github
+    label: 在 GitHub 查看我的项目
+  - name: Telegram
+    url: https://s.081531.xyz/telegram
+    icon: telegram
+    label: 在 Telegram 和我交流
+  - name: QQ
+    url: https://s.081531.xyz/qq
+    icon: qq
+    label: 在 QQ 和我交流  
+  - name: Email
+    url: mailto:mcy@kemiaosw.top
+    icon: email
+    label: 发送邮件给我
+
+gallery:
+  title: 相册
+  eyebrow: PHOTO ALBUM / 相册
+  album_eyebrow: PHOTO NOTES / 画面手账
+  description: 把值得留下的画面，贴进这一页；等有空，再慢慢翻看。
+  # 相册的显示顺序由此列表决定。未来本地媒体可放在 source/gallery/media/<slug>/，
+  # URL 写为 /gallery/media/<slug>/filename.ext；也可以直接填写远程 HTTPS URL。
+  albums:
+    - slug: wallpapers
+      title: 一些壁纸
+      description: 觉得好看的一些壁纸，偶尔也收一段会动的画面。
+      date: 2026-06-01
+      access: public
+      cover: https://r2tc.20030327.xyz/file/博客/主题/1780640308182_AWDSV.jpg
+      source_attribution:
+        name: 测试 相册：一些壁纸
+        url: https://daily.yybb.us/gallery/bizhi/
+        notice: 样例媒体来源：
+      items:
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780640308182_AWDSV.jpg
+          type: image
+          alt: 一张浅色系壁纸
+          date: 2026-06-01
+          caption: 六月，先贴下这一张。
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780643226230_wallhaven-9d1yjk.png
+          type: image
+          alt: 一张桌面壁纸
+          date: 2026-06-01
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780646308808_qDASFS.jpg
+          type: image
+          alt: 一张暖色壁纸
+          date: 2026-06-01
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780646556665_1780646505697.png
+          type: image
+          alt: 一张插画壁纸
+          date: 2026-06-01
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780646594844_wallhaven-5geqr5.jpg
+          type: image
+          alt: 一张自然风景壁纸
+          date: 2026-06-01
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780647884540_1780647819384.png
+          type: image
+          alt: 一张深色壁纸
+          date: 2026-06-01
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780649961248_adev.mp4
+          type: video
+          alt: 一段五月的动态壁纸
+          date: 2026-05-22
+          caption: 会动的那一格。
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780650817392_rwcgf.mp4
+          type: video
+          alt: 一段五月的动态画面
+          date: 2026-05-22
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780907849667_aaviolet.png
+          type: image
+          alt: 一张紫色调壁纸
+          date: 2026-05-22
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780908652756_ghjuyh.png
+          type: image
+          alt: 一张插画壁纸
+          date: 2026-05-22
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780908654959_edfgredxcv.png
+          type: image
+          alt: 一张色彩壁纸
+          date: 2026-05-22
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780909061608_wallhaven-wyzxvr.jpg
+          type: image
+          alt: 一张风景壁纸
+          date: 2026-05-22
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780909261513_1780909183175.png
+          type: image
+          alt: 一张人物插画壁纸
+          date: 2026-05-22
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780909397468_1780909368268.png
+          type: image
+          alt: 一张夜色壁纸
+          date: 2026-05-22
+    - slug: secret-notes
+      title: 秘密哦
+      description: 演示一页需要密码才翻开的相册。
+      date: 2026-06-15
+      access: password
+      # SHA-256("123456")；仅用于演示。静态站密码门不构成媒体访问控制。
+      password_hash: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+      cover: https://r2tc.20030327.xyz/file/博客/主题/1780908652756_ghjuyh.png
+      source_attribution:
+        name: AIOVTUE 相册：秘密哦
+        url: https://daily.yybb.us/gallery/jiamio/
+        notice: 样例媒体来源：
+      items:
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780908652756_ghjuyh.png
+          type: image
+          alt: 私藏相册的第一张插画
+          date: 2026-06-15
+          caption: 演示相册；密码为 123456。
+        - url: https://r2tc.20030327.xyz/file/博客/主题/1780646594844_wallhaven-5geqr5.jpg
+          type: image
+          alt: 私藏相册的第二张风景
+          date: 2026-06-10
+
+fcircle:
+  title: 朋友圈
+  eyebrow: FRIENDS CIRCLE / 朋友圈
+  description: 把友邻们最近写下的文字，收进这一页手账。
+  data_url: https://fc.081531.xyz/all.json
+  page_size: 20
+  loading_label: 正在翻阅友邻们的新文章……
+  empty_label: 最近还没有收到友邻的新文章。
+  error_label: 朋友圈暂时无法加载，请检查网络后重试。
+  retry_label: 重新加载
+  load_more_label: 再翻几页
+
+links:
+  title: 友链
+  eyebrow: FRIENDS / 友链
+  description: 在互联网的星河里，记录那些常来常往、彼此照亮的朋友们。
+  data_url: https://cdn.jsdmirror.com/gh/kmoretti/hexo-blog-source@main/source/_data/links.yml
+  latency_url: https://fc.081531.xyz/link.json
+  application:
+    enable: true
+    endpoint: https://verify.081531.xyz/api/submissions
+    eyebrow: APPLY / 友链申请
+    title: 留一张你的名片
+    description: 确认申请条件后，填写站点信息；审核结果会发送到你填写的邮箱。
+    conditions_title: 申请前的小确认
+    apply_label: 申请友链
+    update_label: 更新友链信息
+  site_info:
+    enable: true
+    title: 本站信息
+    #screenshot: https://example.com/screenshot.png  # 可选，本站截图 URL
+  public_list:
+    enable: true
+    endpoint: https://verify.081531.xyz/api/submissions
+    eyebrow: RECORDS / 申请记录
+    title: 友链申请册
+    description: 记录公开可见的友链申请与更新状态。
+    page_size: 12
+
+footer:
+  text: 愿每一次落笔，都离喜欢的生活近一点。
+  start_year: 2026
+
+about:
+  eyebrow: ABOUT / 关于
+  description: 一页关于这个站点、写下这些字的人，以及所有来过的人。
+  # 可选：作者介绍卡上的标签，最多建议 3-4 个。
+  author_tags:
+    - 喜欢记录日常
+    - 博客写作者
+    - ai编程中~
+  author:
+    eyebrow: ABOUT ME / 关于作者
+  journey:
+    eyebrow: JOURNEY / 心路历程
+    title: 心路历程
+  sponsors:
+    eyebrow: SPONSORS / 致谢
+    title: 致谢名单
+    description: 感谢每一位支持者，让这个小角落一直亮着灯。
+    # 远程赞助数据（CDN，更新有延迟）；结构：{ afdian, sponsors: [{ name, tier?, link?, message?, seed?, date? }] }
+    data_url: https://cdn.jsdmirror.com/gh/kmoretti/Sponsor@main/src/sponsors.json
+    # 赞助入口；远程 JSON 中的 afdian 字段会优先覆盖它。
+    support_url: https://sponsor.081531.xyz
+    support_label: 投喂一杯咖啡
+    support_note: 你的名字也会出现在这面墙上。
+    loading_label: 正在整理支持者的来信……
+    empty_label: 暂时还没有赞助记录，期待你的第一杯咖啡。
+    error_label: 赞助名单暂时无法加载，请稍后重试。
+    retry_label: 重新加载
+
+shuoshuo:
+  author_label: 克喵Moretti
+  source_label: 查看原文
+  comment_label: 评论这条
+  loading_label: 正在收集最新的便签……
+  empty_label: 还没有公开说说
+  error_label: 暂时无法加载说说，请稍后重试
+  retry_label: 重新加载
+
+comments:
+  enable: true
+  provider: twikoo
+  twikoo_version: 1.7.15
+  path: /shuoshuo/
+  unconfigured_label: 评论区尚未配置，填入 Twikoo 环境地址后即可使用。
+  quote_hint: 引用已准备好，可以继续编辑后发布。
+
+# 独立留言板：与 /shuoshuo/ 的评论使用不同 Twikoo path，不会混在同一线程。
+comment_board:
+  enable: true
+  path: /comment/
+  eyebrow: GUESTBOOK / 留言板
+  title: 留一页话给我
+  description: 想说的话，都会被好好收进这本手账。
+  letter_title: "✨来自站点作者的留言:"
+  letter_lines:
+    - 本站有哪些做得好或者不好的地方？
+    - 或者你有什么改进的建议？
+    - 又或者你有什么具体的问题需要咨询？
+    - 都可以在下方评论区留言哦~~~
+  letter_footer: 小站站长亲自为您服务！
+  envelope:
+    # 对应 AIOVTUE 留言板的桌面默认尺寸；可按站点实际字体微调。
+    wrap_height: 447
+    open_height: 1050
+    open_offset: -200
+    danmaku_open_bottom_trim: 140
+  open_label: 打开这封便签
+  close_label: 收起这封便签
+  toggle_label: 切换便签展开状态
+  comments_title: 写下你的话
+  comments_kicker: MESSAGE BOOK / 留言簿
+  danmaku:
+    # 仅展示 /comment/ 线程中已公开的留言及回复；不展示 HTML、链接或图片。
+    enable: true
+    desktop_only: true
+    page_size: 50
+    include_replies: true
+    max_text_length: 42
+    lane_count: 4
+    min_speed: 54
+    max_speed: 82
+    gap: 22
+    interval_ms: 760
+    pause_label: 暂停弹幕
+    resume_label: 继续弹幕
+    reduced_motion_label: 已按系统设置减少动态效果
+    offline_label: 离线时不播放留言弹幕。
+    empty_label: 还没有可飘过的留言，等你的第一句。
+    unavailable_label: 留言弹幕暂时无法加载。
+
+reactions:
+  # 每条说说使用 shuoshuo:<post.id> 作为独立 target。
+  enable: true
+  endpoint: https://api-emaction.081531.xyz
+  storage_key: paper-moments-reactions
+  available:
+    - emoji: 👍
+      name: thumbs-up
+      label: 赞
+    - emoji: ❤️
+      name: red-heart
+      label: 喜欢
+    - emoji: 😄
+      name: smile-face
+      label: 开心
+    - emoji: 🎉
+      name: party-popper
+      label: 庆祝
+    - emoji: 👀
+      name: eyes
+      label: 看过
+  # GET /reactions?targetId=...
+  get_path: /reactions
+  # PATCH /reaction?targetId=...&reaction_name=...&diff=...
+  toggle_path: /reaction
+
+appearance:
+  default_mode: system
+  theme_storage_key: paper-moments-theme
+  accent_hue: 136
+  accent_storage_key: paper-moments-accent
+
+pjax:
+  enable: true
+  # 需要排除的链接（href 精确匹配，例如 /special/）；外链/锚点/mailto/下载已默认排除。
+  exclude: []
+
+# PWA 离线适配（参考安知鱼主题）：hexo-offline 生成 service-worker.js，
+# 预缓存静态页面壳；远程数据（说说/友链/赞助）在线加载；评论区浏览走缓存。
+pwa:
+  enable: true
+  manifest: /manifest.json
+  theme_color: '#6f9274'
+  background_color: '#f4efe4'
+  apple_touch_icon: /icons/icon-180.png
+  icon_192: /icons/icon-192.png
+  icon_512: /icons/icon-512.png
+  icon_maskable_512: /icons/icon-maskable-512.png
+
+# 首页 Live Dashboard 实时状态面板（自部署 live-dashboard，通过接口渲染）。
+# url: 面板页面地址（用于外链与推导 api_base）。
+# api_base: 接口根路径，留空则自动使用 "${url%/}/api"。
+# refresh_interval: 自动刷新间隔（毫秒），默认 10000。
+# max_activities: 展示的最近活动条数，默认 5。
+live_dashboard:
+  enable: true
+  url: https://live.081531.xyz/
+  api_base:
+  refresh_interval: 10000
+  max_activities: 5
+  show_activities: true
+  show_viewers: true
+  eyebrow: LIVE / 实时状态
+  title: 正在做什么
+  description: 一块实时状态面板，看看我在做什么。
+  open_label: 在新窗口查看完整版
+  error_label: 实时状态暂时无法加载。
+  retry_label: 重新加载
+  loading_label: 正在连接实时面板…
+
+# 左下角音乐播放器（参考 wxuyu.top 左侧导航栏形态）。
+# 歌曲的 url/cover/lrc 可为本地路径（放在 source/music/ 下，写 /music/<file>）或远程 URL。
+music:
+  enable: true
+  # 文案（迷你条/歌词面板/可访问性）
+  title_label: 正在播放
+  play_label: 播放
+  pause_label: 暂停
+  prev_label: 上一首
+  next_label: 下一首
+  lyrics_label: 歌词
+  volume_label: 音量
+  close_label: 收起播放器
+  open_label: 打开音乐播放器
+  empty_label: 暂无歌曲
+  no_lyrics_label: 暂无歌词
+  # 播放列表：按顺序播放，播完自动下一首；最后一首播完回到第一首。
+  playlist:
+    - title: 我寄此书
+      artist: 丁丁Rajar
+      url: https://cdn.jsdmirror.cn/gh/kmoretti/music@main/music/1.mp3
+      cover: https://cdn.jsdmirror.cn/gh/kmoretti/music@main/cover/1.jpg
+      lrc: https://jsd.268682.xyz/gh/kmoretti/music@main/lrc/1.lrc

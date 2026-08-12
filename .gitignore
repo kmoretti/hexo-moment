@@ -1,0 +1,9 @@
+node_modules/
+public/
+db.json
+.deploy*/
+.cache/
+.hexo-server.log
+.trae/
+.DS_Store
+Thumbs.db

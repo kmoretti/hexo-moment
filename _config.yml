@@ -1,0 +1,73 @@
+# Paper Moments 站点配置
+# 站点级配置负责 Hexo、数据插件和评论服务；主题个性化配置见 _config.paper-moments.yml。
+
+title: 喵洛阁
+author: 克喵Moretti
+language: zh-CN
+# 本地开发地址；部署前必须替换为真实 HTTPS 站点地址。
+url: https://pyq.081531.xyz
+root: /
+permalink: :year/:month/:day/:title/
+
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads
+
+new_post_name: :title.md
+post_asset_folder: false
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: false
+  tab_replace: ''
+
+theme: paper-moments
+
+# hexo-bb-channel 在浏览器运行时请求该 API，不需要重新生成站点。
+bb_channel:
+  enable: true
+  mode: client
+  route: shuoshuo/
+  title: 说说
+  description: 把日常写下来，给未来的自己留一页便签。
+  api_base: https://tg-channel.081531.xyz
+  page_size: 20
+
+# Twikoo 云函数地址；示例服务返回版本 1.7.15。
+twikoo:
+  env_id: https://tg-pyq.081531.xyz/
+  version: 1.7.15
+  lang: zh-CN
+
+# 只保留中文界面，不启用 Hexo 的多语言切换。
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+archive_generator:
+  per_page: 0
+  yearly: true
+  monthly: true
+  daily: false
+
+category_generator:
+  per_page: 0
+
+tag_generator:
+  per_page: 0
+
+pretty_urls:
+  trailing_index: true
+  trailing_html: false
+
+meta_generator: false
+
+exclude:
+  - node_modules/**
+  - public/**
+  - .cache/**

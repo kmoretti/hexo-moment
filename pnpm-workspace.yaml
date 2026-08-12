@@ -1,0 +1,2 @@
+patchedDependencies:
+  hexo-offline: patches/hexo-offline.patch
