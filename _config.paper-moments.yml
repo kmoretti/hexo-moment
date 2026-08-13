@@ -336,8 +336,8 @@ pjax:
   # 需要排除的链接（href 精确匹配，例如 /special/）；外链/锚点/mailto/下载已默认排除。
   exclude: []
 
-# PWA 离线适配（参考安知鱼主题）：hexo-offline 生成 service-worker.js，
-# 预缓存静态页面壳；远程数据（说说/友链/赞助）在线加载；评论区浏览走缓存。
+# PWA 离线适配：SWPP 生成 /sw.js，静态资源按规则缓存；
+# HTML 不缓存，远程数据（说说/友链/赞助）在线加载；评论区等接口短时缓存。
 pwa:
   enable: true
   manifest: /manifest.json

@@ -9,19 +9,22 @@
   },
   "scripts": {
     "clean": "hexo clean",
-    "build": "hexo clean && hexo generate",
-    "dev": "cross-env HEXO_OFFLINE_SKIP=1 hexo server --port 4100",
-    "check": "hexo generate",
-    "start": "cross-env HEXO_OFFLINE_SKIP=1 hexo clean && cross-env HEXO_OFFLINE_SKIP=1 hexo generate && cross-env HEXO_OFFLINE_SKIP=1 hexo server --port 4100"
+    "postinstall": "node themes/paper-moments/scripts/copy-swup.cjs",
+    "prepare:theme-assets": "node themes/paper-moments/scripts/copy-swup.cjs",
+    "build": "hexo clean && node themes/paper-moments/scripts/copy-swup.cjs && hexo generate && hexo swpp",
+    "dev": "node themes/paper-moments/scripts/copy-swup.cjs && hexo server --port 4100",
+    "check": "hexo clean && node themes/paper-moments/scripts/copy-swup.cjs && hexo generate && hexo swpp",
+    "start": "node themes/paper-moments/scripts/copy-swup.cjs && hexo clean && hexo generate && hexo swpp && hexo server --port 4100"
   },
   "dependencies": {
     "hexo": "^7.3.0",
     "hexo-bb-channel": "^0.2.1",
-    "hexo-offline": "^4.0.0",
     "hexo-renderer-ejs": "^2.0.0",
+    "hexo-swpp": "^4.0.4",
     "hexo-renderer-marked": "^7.0.0",
     "hexo-server": "^3.0.0",
-    "pjax": "^0.2.8"
+    "swpp-backends": "^3.1.4",
+    "swup": "4.9.2"
   },
   "devDependencies": {
     "cross-env": "^10.1.0"

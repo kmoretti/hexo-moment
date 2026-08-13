@@ -9,7 +9,7 @@
 - `/gallery/`：相册目录、公开/密码提示门相册、图片/视频灯箱
 - `/comment/`：独立留言板、可展开纸笺与桌面端 Twikoo 留言弹幕
 - `/link/`、`/fcircle/`、`/about/` 等页面
-- 本地 Lucide/Font Awesome Brands SVG sprite、PJAX 与 PWA 页面壳缓存
+- 本地 Lucide/Font Awesome Brands SVG sprite、Swup 无刷新导航与 PWA 资源缓存
 
 ## 开发
 
@@ -82,7 +82,7 @@ https://cdn.jsdelivr.net/npm/twikoo@1.7.15/dist/twikoo.css
 https://cdn.jsdelivr.net/npm/twikoo@1.7.15/dist/twikoo.all.min.js
 ```
 
-若要切换自己的服务，只需修改 `twikoo.env_id`；`version` 应保持明确的三段版本号，不要使用 `latest`。评论客户端由 `source/js/comments.js` 单例加载，因此从 PJAX 页面反复进入说说或留言板时不会重复插入 CDN 脚本。
+若要切换自己的服务，只需修改 `twikoo.env_id`；`version` 应保持明确的三段版本号，不要使用 `latest`。评论客户端由 `source/js/comments.js` 单例加载，因此从 Swup 页面反复进入说说或留言板时不会重复插入 CDN 脚本。
 
 - `/shuoshuo/` 的引用评论仍使用 `comments.path`（默认 `/shuoshuo/`）；
 - `/comment/` 使用 `comment_board.path`（默认 `/comment/`）；
@@ -109,11 +109,11 @@ comment_board:
     max_text_length: 42
 ```
 
-页面现在使用 AIOVTUE 固定参考提交 `d1110c265445b26a42c9cd05fb1841f35618b4f6` 的四张信封资源：`before.png`、`after.png`、`cover.png`、`line.png`。它们已按原始尺寸和层级自托管在 `source/comment/envelope/`，并通过 `form-wrap` 的 `447px → 1050px` 展开模型还原桌面信封；这是视觉还原所必需的资源，不是运行时外部 CDN。本站仍保留自己的 Paper Moments 页面标题、Twikoo path、PJAX 和安全纯文本弹幕逻辑。
+页面现在使用 AIOVTUE 固定参考提交 `d1110c265445b26a42c9cd05fb1841f35618b4f6` 的四张信封资源：`before.png`、`after.png`、`cover.png`、`line.png`。它们已按原始尺寸和层级自托管在 `source/comment/envelope/`，并通过 `form-wrap` 的 `447px → 1050px` 展开模型还原桌面信封；这是视觉还原所必需的资源，不是运行时外部 CDN。本站仍保留自己的 Paper Moments 页面标题、Twikoo path、Swup 和安全纯文本弹幕逻辑。
 
 弹幕仅在桌面端、在线且未启用系统“减少动态效果”时运行；它只读取 `/comment/` 线程最近 `page_size` 条公开主留言和可选回复。留言 HTML 会转为纯文本、按 Unicode 字符截断并通过 `textContent` 写入，不会把评论中的 HTML、链接或图片作为弹幕执行。可以用页面的“暂停弹幕 / 继续弹幕”按钮控制播放；移动端、离线、`prefers-reduced-motion` 下会退化为静态纸笺和正常评论区。
 
-Twikoo 评论浏览请求可使用现有 Workbox `NetworkFirst` runtime cache 回退到最近缓存；**发布留言始终需要联网**，不会缓存或后台重放 POST 请求。浏览器可能在本机保存公开评论缓存最多 7 天。
+Twikoo 评论浏览请求可使用 SWPP 运行时缓存（在线优先）回退到最近缓存；**发布留言始终需要联网**，不会缓存或后台重放 POST 请求。浏览器可能在本机保存公开评论缓存最多 7 天。
 
 ### 相册
 
@@ -158,7 +158,7 @@ node -e "const crypto=require('crypto'); process.stdout.write(crypto.createHash(
 
 本项目的首批样例媒体直接引用 [AIOVTUE 相册](https://daily.yybb.us/gallery/) 当前公开的远程 URL，未下载或再发布原图/视频。每个样例相册详情页和本说明都会给出来源链接；其可用性取决于上游托管。替换成自己的素材后，可删除对应的 `source_attribution` 字段。
 
-PWA 预缓存页面壳、CSS 和脚本，但会刻意忽略 `source/gallery/media/**` 下的本地原图/视频，避免首次安装 Service Worker 时下载大量媒体；远程媒体也不由 Workbox 强制缓存。
+SWPP 缓存静态资源（CSS/JS/字体/图片等），但会刻意忽略 `source/gallery/media/**` 下的本地原图/视频，避免首次安装 Service Worker 时下载大量媒体；远程媒体也不由 SWPP 强制缓存。
 
 ### 朋友圈文章流
 
@@ -170,7 +170,7 @@ fcircle:
   page_size: 20
 ```
 
-运行时会仅接受 HTTP(S) 数据地址和文章链接，跳过缺标题、链接不安全或重复的文章，并按发布时间倒序展示。文章标题和头像都使用 DOM API 写入，外链会在新标签页打开。访问成功后，PWA 通过 `NetworkFirst` 缓存最近一次朋友圈数据（有效期 6 小时）；离线时可回退到该缓存，首次离线则显示正常的加载失败提示。
+运行时会仅接受 HTTP(S) 数据地址和文章链接，跳过缺标题、链接不安全或重复的文章，并按发布时间倒序展示。文章标题和头像都使用 DOM API 写入，外链会在新标签页打开。访问成功后，SWPP 通过运行时缓存（在线优先）缓存最近一次朋友圈数据（有效期 6 小时）；离线时可回退到该缓存，首次离线则显示正常的加载失败提示。
 
 导航配置位于 `_config.paper-moments.yml` 的 `navigation`。普通条目继续使用 `name/path/icon`；需要下拉菜单时添加 `children`：
 
@@ -182,9 +182,13 @@ fcircle:
       path: /link/
 ```
 
-## PWA
+## 无刷新导航与 PWA
 
-`hexo-offline` 根据 [`hexo-offline.config.cjs`](./hexo-offline.config.cjs) 生成 Service Worker。新增 HTML、CSS、JavaScript 会自动预缓存为离线页面壳；远程说说、朋友圈、Twikoo 和图片等数据仍按各自 runtime cache/网络策略处理。
+页面切换使用 [Swup](https://swup.js.org/)，配合 `source/js/page-runtime.js` 在每次内容替换后重新初始化页面模块、执行内联脚本并隔离上一页的请求作用域，因此音乐播放器等全局状态可以跨页面保持。
+
+Service Worker 使用 [SWPP](https://swpp.kmar.top/) 生成（配置见 [`swpp.config.ts`](./swpp.config.ts)）：HTML 不缓存以保证内容实时性；JS/CSS/字体/图片等静态资源按规则缓存；Twikoo、朋友圈、Live Dashboard 等远程接口短时缓存，兼顾离线回退。`pnpm run build` 会在 `hexo generate` 后自动执行 `hexo swpp` 生成增量更新文件。
+
+若遇到 Service Worker 缓存异常，可访问 [`/swpp/escape.html`](./source/swpp/escape.html) 清空本地注册与缓存后返回首页。
 
 ## 许可证
 

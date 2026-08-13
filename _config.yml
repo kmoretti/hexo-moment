@@ -42,6 +42,16 @@ twikoo:
   version: 1.7.15
   lang: zh-CN
 
+# SWPP 配置（替代已停止维护的 hexo-offline）。
+# 模板中保留手动注册逻辑，因此 auto_register 与 gen_dom 均关闭。
+swpp:
+  enable: true
+  config_path: "swpp.config.ts"
+  serviceWorker: true
+  auto_register: false
+  gen_dom: false
+  npm_url: "https://registry.npmmirror.com"
+
 # 只保留中文界面，不启用 Hexo 的多语言切换。
 search:
   path: search.xml
