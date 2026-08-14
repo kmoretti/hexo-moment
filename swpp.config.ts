@@ -38,7 +38,7 @@ defineConfig({
     // 缓存库名称，与文档示例保持一致。
     CACHE_NAME: 'BlogCache',
     // 逃生门版本号。后续若需要强制清空用户缓存，修改此数字并重新部署即可。
-    ESCAPE: 1,
+    ESCAPE: 2,
     // 检查更新最短间隔 10 分钟（默认值）。
     UPDATE_CD: 600000,
   },
@@ -86,10 +86,8 @@ defineConfig({
           return 21600000 // 6 小时
         }
 
-        // Live Dashboard 公开接口。
-        if (host === 'live.081531.xyz' && /^\/api\/(current|config)$/.test(pathname)) {
-          return 60000 // 1 分钟
-        }
+        if (host === 'live.081531.xyz' && pathname === '/api/current') return false
+        if (host === 'live.081531.xyz' && pathname === '/api/config') return 60000 // 1 分钟
 
         // 其余资源不缓存。
         return false
@@ -118,7 +116,8 @@ defineConfig({
 
         if (host === 'tg-pyq.081531.xyz') return 300000
         if (host === 'fc.081531.xyz' && pathname === '/all.json') return 21600000
-        if (host === 'live.081531.xyz' && /^\/api\/(current|config)$/.test(pathname)) return 60000
+        if (host === 'live.081531.xyz' && pathname === '/api/current') return false
+        if (host === 'live.081531.xyz' && pathname === '/api/config') return 60000
 
         return false
       }
